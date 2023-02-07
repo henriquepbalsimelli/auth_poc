@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+    <Id>fbd180db-8e03-4c82-ac36-428feff3f651</Id>
+    <Version>2.0.0.5</Version>
+    <ProviderName>Shopper (AUTH_POC)</ProviderName>
+    <DefaultLocale>pt-BR</DefaultLocale>
+    <DisplayName DefaultValue="Kdabra Purchase"/>
+    <Description DefaultValue="Módulo do Shopper para o departamento de Compras."/>
+    <IconUrl DefaultValue="https://localhost:3000/assets/images/icon-32.png"/>
+    <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/images/icon-64.png"/>
+    <SupportUrl DefaultValue="https://localhost:3000/"/>
+    <AppDomains>
+        <AppDomain>https://www.shopper.com.br</AppDomain>
+        <AppDomain>https://apis.google.com</AppDomain>
+        <AppDomain>https://accounts.google.com</AppDomain>
+        <AppDomain>https://localhost:3000</AppDomain>
+    </AppDomains>
+    <Hosts>
+        <Host Name="Workbook"/>
+    </Hosts>
+    <DefaultSettings>
+        <SourceLocation DefaultValue="https://localhost:3000"/>
+    </DefaultSettings>
+    <Permissions>ReadWriteDocument</Permissions>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+                      xsi:type="VersionOverridesV1_0">
+        <Hosts>
+            <Host xsi:type="Workbook">
+                <DesktopFormFactor>
+                    <GetStarted>
+                        <Title resid="Shopper.GetStarted.Title"/>
+                        <Description resid="Shopper.GetStarted.Description"/>
+                        <LearnMoreUrl resid="Shopper.GetStarted.LearnMoreUrl"/>
+                    </GetStarted>
+                    <FunctionFile resid="Commands.Url"/>
+                    <ExtensionPoint xsi:type="PrimaryCommandSurface">
+                        <CustomTab id="TabShopper">
+                            <!-- TASKPANE PRINCIPAL -->
+                            <Group id="Shopper.GrupoPainel">
+                                <Label resid="Shopper.GrupoPainelLabel"/>
+                                <Icon>
+                                    <bt:Image size="16" resid="Icon.16x16"/>
+                                    <bt:Image size="32" resid="Icon.32x32"/>
+                                    <bt:Image size="80" resid="Icon.80x80"/>
+                                </Icon>
+                                <!-- BOTÃO DO PAINEL -->
+                                <Control xsi:type="Button" id="Shopper.btnPainel">
+                                    <Label resid="btnPainel.Label"/>
+                                    <Supertip>
+                                        <Title resid="btnPainel.Label"/>
+                                        <Description resid="btnPainel.Tooltip"/>
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="Icon.16x16"/>
+                                        <bt:Image size="32" resid="Icon.32x32"/>
+                                        <bt:Image size="80" resid="Icon.80x80"/>
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+                                        <SourceLocation resid="Taskpane.Url"/>
+                                    </Action>
+                                </Control>
+                                <!-- /BOTÃO DO PAINEL -->
+                                <!-- CRIAR PEDIDO -->
+                                <Control xsi:type="Button" id="Shopper.btnCriarPedido">
+                                    <Label resid="btnCriarPedido.Label"/>
+                                    <Supertip>
+                                        <Title resid="btnCriarPedido.Label"/>
+                                        <Description resid="btnCriarPedido.Tooltip"/>
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="btnCriarPedido.16x16"/>
+                                        <bt:Image size="32" resid="btnCriarPedido.32x32"/>
+                                        <bt:Image size="80" resid="btnCriarPedido.80x80"/>
+                                    </Icon>
+                                    <Action xsi:type="ExecuteFunction">
+                                        <FunctionName>criarPedido</FunctionName>
+                                    </Action>
+                                </Control>
+                                <!-- /CRIAR PEDIDO -->
+                                <!-- PEDIDO AVULSO -->
+                                <Control xsi:type="Button" id="Shopper.btnPedidoAvulso">
+                                    <Label resid="btnPedidoAvulso.Label"/>
+                                    <Supertip>
+                                        <Title resid="btnPedidoAvulso.Label"/>
+                                        <Description resid="btnPedidoAvulso.Tooltip"/>
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="btnPedidoAvulso.16x16"/>
+                                        <bt:Image size="32" resid="btnPedidoAvulso.32x32"/>
+                                        <bt:Image size="80" resid="btnPedidoAvulso.80x80"/>
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <TaskpaneId>Shopper.PedidoAvulsoTaskpane</TaskpaneId>
+                                        <SourceLocation resid="PedidoAvulsoTaskpane.Url"/>
+                                    </Action>
+                                </Control>
+                                <!-- /PEDIDO AVULSO -->
+                            </Group>
+                            <!-- /TASKPANE PRINCIPAL -->                      
+
+                            <Label resid="TabShopper.TabLabel"/>
+                        </CustomTab>
+                    </ExtensionPoint>
+                </DesktopFormFactor>
+            </Host>
+        </Hosts>
+        <Resources>
+            <bt:Images>
+                <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/images/icon-painel-16.png"/>
+                <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/images/icon-painel-32.png"/>
+                <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/images/icon-painel-80.png"/>
+                <bt:Image id="btnCriarPedido.16x16"
+                          DefaultValue="https://localhost:3000/assets/images/icon-criar-pedido-16.png"/>
+                <bt:Image id="btnCriarPedido.32x32"
+                          DefaultValue="https://localhost:3000/assets/images/icon-criar-pedido-32.png"/>
+                <bt:Image id="btnCriarPedido.80x80"
+                          DefaultValue="https://localhost:3000/assets/images/icon-criar-pedido-80.png"/>
+                <bt:Image id="btnPedidoAvulso.16x16"
+                          DefaultValue="https://localhost:3000/assets/images/icon-pedido-avulso-16.png"/>
+                <bt:Image id="btnPedidoAvulso.32x32"
+                          DefaultValue="https://localhost:3000/assets/images/icon-pedido-avulso-32.png"/>
+                <bt:Image id="btnPedidoAvulso.80x80"
+                          DefaultValue="https://localhost:3000/assets/images/icon-pedido-avulso-80.png"/>
+                <bt:Image id="btnPedidoInterno.16x16"
+                          DefaultValue="https://localhost:3000/assets/images/icon-pedido-avulso-16.png"/>
+                <bt:Image id="btnPedidoInterno.32x32"
+                          DefaultValue="https://localhost:3000/assets/images/icon-pedido-avulso-32.png"/>
+                <bt:Image id="btnPedidoInterno.80x80"
+                          DefaultValue="https://localhost:3000/assets/images/icon-pedido-avulso-80.png"/>
+            </bt:Images>
+            <bt:Urls>
+                <bt:Url id="Shopper.GetStarted.LearnMoreUrl"
+                        DefaultValue="http://go.microsoft.com/fwlink/?LinkId=276812"/>
+                <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands"/>
+                <bt:Url id="Taskpane.Url" DefaultValue="http://localhost:3000/painel"/>
+                <bt:Url id="CotacaoTaskpane.Url" DefaultValue="https://localhost:3000/cotacao/listar"/>
+                <bt:Url id="PedidoAvulsoTaskpane.Url" DefaultValue="http://localhost:3000/pedidos/avulso"/>
+                <bt:Url id="PedidoInternoTaskpane.Url" DefaultValue="http://localhost:3000/pedidos/interno"/>
+                <bt:Url id="ProdutosTaskpane.Url" DefaultValue="https://localhost:3000/produtos"/>
+                <bt:Url id="FornecedoresTaskpane.Url" DefaultValue="https://localhost:3000/fornecedores"/>
+                <bt:Url id="parametrosgerais.Url" DefaultValue="https://localhost:3000/parametros"/>
+            </bt:Urls>
+            <bt:ShortStrings>
+                <bt:String id="Shopper.GetStarted.Title" DefaultValue="Shopper Compras Add in instalado!"/>
+                <bt:String id="Shopper.GrupoCadastroLabel" DefaultValue="Cadastros"/>
+                <bt:String id="Shopper.GrupoPainelLabel" DefaultValue="Painel"/>
+                <bt:String id="btnPainel.Label" DefaultValue="Painel"/>
+                <bt:String id="btnCriarPedido.Label" DefaultValue="Criar Pedido"/>
+                <bt:String id="btnPedidoInterno.Label" DefaultValue="Pedido Interno"/>
+                <bt:String id="btnPedidoAvulso.Label" DefaultValue="Pedido Avulso"/>
+                <bt:String id="TabShopper.TabLabel" DefaultValue="SHOPPER (AUTH_POC)"/>
+            </bt:ShortStrings>
+            <bt:LongStrings>
+                <bt:String id="Shopper.GetStarted.Description"
+                           DefaultValue="O add-in carregou com sucesso. Utilize-o na aba SHOPPER."/>
+                <bt:String id="btnPainel.Tooltip" DefaultValue="Exibe seu Painel de Comprador"/>
+                <bt:String id="btnCriarPedido.Tooltip"
+                           DefaultValue="Selecione os produtos no painel e clique aqui para adicionar um pedido"/>
+                <bt:String id="btnCancelarPedido.Tooltip"
+                           DefaultValue="Selecione um pedido para cancelar"/>
+                <bt:String id="btnPedidoInterno.Tooltip"
+                           DefaultValue="Selecione o fornecedor e produtos para um pedido Interno"/>
+                <bt:String id="btnPedidoAvulso.Tooltip"
+                           DefaultValue="Selecione o fornecedor e produtos para um pedido customizado"/>
+                <bt:String id="btnPedidoFLV3.Tooltip"
+                           DefaultValue="Pedido FLV"/>
+                <bt:String id="btnListarPedido.Tooltip"
+                           DefaultValue="Lista os seus pedidos em aberto"/>
+                <bt:String id="btnMarcarFaturado.Tooltip"
+                           DefaultValue="Marca o pedido como faturado"/>
+                <bt:String id="btnConferirNota.Tooltip"
+                           DefaultValue="Abre o painel para seleção de notas para conferência"/>
+                <bt:String id="btnMarcarRecebido.Tooltip"
+                           DefaultValue="Selecione os pedidos na listagem e clique aqui para marcar como recebido"/>
+                <bt:String id="btnGetDashboard.Tooltip"
+                           DefaultValue="Abre o Dashboard de Pedidos"/>
+                <bt:String id="btnListarProdutos.Tooltip"
+                           DefaultValue="Selecione um pedido na listagem e clique aqui para listar os produtos dele"/>
+                <bt:String id="btnSalvarItens.Tooltip"
+                           DefaultValue="Salvar as alterações nos itens do pedido"/>
+                <bt:String id="btnParametros.Tooltip" DefaultValue="Configure os parametros da aplicação"/>
+                <bt:String id="btnCriarCotacao.Tooltip"
+                           DefaultValue="Selecione os fornecedores para enviar uma cotação"/>
+                <bt:String id="btnAjustePreco.Tooltip"
+                           DefaultValue="Ajuste de preços"/>
+                <bt:String id="btnAtualizarCotacao.Tooltip"
+                           DefaultValue="Atualize os dados da cotação enviada pelo fornecedor"/>
+                <bt:String id="btnFinalizarCotacao.Tooltip"
+                           DefaultValue="Finalize a cotação e gere pedidos para os fornecedores"/>
+                <bt:String id="btnProdutos.Tooltip" DefaultValue="Atualize o cadastro de produtos"/>
+                <bt:String id="btnFornecedores.Tooltip" DefaultValue="Atualize o cadastro de fornecedores"/>
+                <bt:String id="Menu.Tooltip" DefaultValue="Execute uma ação no item selecionado"/>
+            </bt:LongStrings>
+        </Resources>
+    </VersionOverrides>
+</OfficeApp>
