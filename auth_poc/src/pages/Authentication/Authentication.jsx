@@ -62,6 +62,13 @@ function Authentication() {
     }
 
     function handleLogout() {
+
+        if (user.email) {
+            google.accounts.id.revoke(user.email, done => {
+                console.log('user revoked');
+            })
+        }
+
         setUser(null)
         sessionStorage.removeItem('user')
         window.location.href = '/'
