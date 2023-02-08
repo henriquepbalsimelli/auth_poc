@@ -1,3 +1,18 @@
+/* Auth */
+#loginButton {
+  margin: 1.5rem 0
+}
+footer p {
+  margin-left: 3rem;
+}
+footer a {
+  color: #eee;
+  cursor: pointer;
+  outline: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+}
+
 .App {
   text-align: center;
 }
