@@ -4,7 +4,7 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
            xsi:type="TaskPaneApp">
-    <Id>fbd180db-8e03-4c82-ac36-428feff3f651</Id>
+    <Id>fbd180db-8e03-4c82-ac36-428feff3f656</Id>
     <Version>2.0.0.5</Version>
     <ProviderName>Shopper (AUTH_POC)</ProviderName>
     <DefaultLocale>pt-BR</DefaultLocale>
@@ -137,10 +137,10 @@
                 <bt:Url id="Shopper.GetStarted.LearnMoreUrl"
                         DefaultValue="http://go.microsoft.com/fwlink/?LinkId=276812"/>
                 <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands"/>
-                <bt:Url id="Taskpane.Url" DefaultValue="http://localhost:3000/painel"/>
+                <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/painel"/>
                 <bt:Url id="CotacaoTaskpane.Url" DefaultValue="https://localhost:3000/cotacao/listar"/>
-                <bt:Url id="PedidoAvulsoTaskpane.Url" DefaultValue="http://localhost:3000/pedidos/avulso"/>
-                <bt:Url id="PedidoInternoTaskpane.Url" DefaultValue="http://localhost:3000/pedidos/interno"/>
+                <bt:Url id="PedidoAvulsoTaskpane.Url" DefaultValue="https://localhost:3000/pedidos/avulso"/>
+                <bt:Url id="PedidoInternoTaskpane.Url" DefaultValue="https://localhost:3000/pedidos/interno"/>
                 <bt:Url id="ProdutosTaskpane.Url" DefaultValue="https://localhost:3000/produtos"/>
                 <bt:Url id="FornecedoresTaskpane.Url" DefaultValue="https://localhost:3000/fornecedores"/>
                 <bt:Url id="parametrosgerais.Url" DefaultValue="https://localhost:3000/parametros"/>

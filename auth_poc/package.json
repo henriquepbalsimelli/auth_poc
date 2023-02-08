@@ -20,7 +20,9 @@
     "start": "office-toolbox sideload -m manifest-dev.xml -a excel&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "certificate": "office-addin-dev-certs install"
+
   },
   "eslintConfig": {
     "extends": [
