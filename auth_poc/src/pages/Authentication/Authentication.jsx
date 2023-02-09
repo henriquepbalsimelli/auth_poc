@@ -33,7 +33,8 @@ function Authentication() {
         /* global google */
         google.accounts.id.initialize({
             client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
-            callback: handleLoginCallback
+            callback: handleLoginCallback,
+            scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/gmail.send'
         })
 
         if (!user) {          
@@ -60,6 +61,8 @@ function Authentication() {
             name: goooglePayload.name,
             picture: goooglePayload.picture  
         }
+
+        console.log(googleUser)
 
         setUser(googleUser)
     }
