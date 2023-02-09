@@ -10,14 +10,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
-      ReactDOM.render(
-          <React.StrictMode>
-
-            <App />
-
-          </React.StrictMode>,
-          document.getElementById('root')
-      )
+    root.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
   }
 })
 

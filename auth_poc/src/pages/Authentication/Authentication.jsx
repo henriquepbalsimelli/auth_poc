@@ -15,6 +15,9 @@ function Authentication() {
     }, [user])
     
     function loadUserSession() {
+        if (user){
+            return
+        }
         const token = sessionStorage.getItem('user')
         if (token) {
             setGoogleUser(token)
