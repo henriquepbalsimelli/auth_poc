@@ -1,9 +1,15 @@
-/* Auth */
+/* Login */
 #loginButton {
   margin: 1.5rem 0
 }
+footer img {
+  border-radius: 50%;
+  width: 40px;
+  margin: 4px 6px 4px 10px;
+  border: 1px solid #326be6;
+}
 footer p {
-  margin-left: 3rem;
+  margin-right: 2rem;
 }
 footer a {
   color: #eee;
@@ -12,6 +18,21 @@ footer a {
   padding: 6px 12px;
   border: 1px solid #ccc;
 }
+
+/* Authorization */
+.auth-button {
+  background-color: #2557bd;
+  color: #eee;
+  padding: 0.75rem 1.25rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+.auth-button:hover {
+  background-color: #326be6;
+}
+
+
+
 
 .App {
   text-align: center;
