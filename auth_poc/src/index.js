@@ -3,8 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Office } from './commands/commands';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+Office.onReady((info) => {
+  if (info.host === Office.HostType.Excel) {
+    root.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
+  }
+})
+
+
 root.render(
   <React.StrictMode>
     <App />

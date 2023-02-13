@@ -24,6 +24,21 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+        <script type="text/javascript">
+          // Office js deletes window.history.pushState and window.history.replaceState. Cache them and restore them
+          window._historyCache = {
+              replaceState: window.history.replaceState,
+              pushState: window.history.pushState
+          };
+      </script>
+      
+      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+      
+      <script type="text/javascript">
+          // Office js deletes window.history.pushState and window.history.replaceState. Restore them
+          window.history.replaceState = window._historyCache.replaceState;
+          window.history.pushState = window._historyCache.pushState;
+      </script>
     <title>React App</title>
     <script src="https://accounts.google.com/gsi/client"></script>
   </head>
